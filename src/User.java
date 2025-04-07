@@ -29,11 +29,9 @@ public class User {
     }
 
     public void cancelarAssinatura(Service service){
-        boolean encontrado = false;
         for(Service s: assinaturas){
-            if(s.getNome().equals(service)){
+            if(s.getNome().equalsIgnoreCase(service.getNome())){
                 assinaturas.remove(s);
-                encontrado = true;
                 System.out.println("Serviço removido!");
                 break;
             }
